@@ -1,17 +1,15 @@
-#### This is for Selenium 4 users.
+# Applitools Tutorial - Selenium JavaScript Ultrafast Grid
 
-# Pre-requisites:
+Get started with Applitools Eyes visual testing with this example of using the Selenium JavaScript and the [Eyes Selenium JavaScript SDK](https://www.npmjs.com/package/@applitools/eyes-selenium).
 
-1. Install Node.js from [here](https://nodejs.org/en/)
+Learn more about how to install and start this project with our [Selenium JavaScript tutorial](https://applitools.com/tutorials/selenium-javascript.html)!
 
-# Running this tutorial
+<https://applitools.com/tutorials/selenium-javascript.html>
 
-1. git clone https://github.com/applitools/tutorial-selenium-javascript-ultrafastgrid.git
-2. cd `tutorial-selenium-javascript-ultrafastgrid` folder
-3. Set up environment variable `APPLITOOLS_API_KEY` with your own API key.
-    * Login to Applitools > Click on the Person icon > My API Key
-    * Linux/Mac: export APPLITOOLS_API_KEY=<your_key>
-    * Windows: set APPLITOOLS_API_KEY=<your_key>
-    * Don't forget to change the example with your own API key   
-4. `npm install`
-5. `npm run test`
+## More Information
+
+Learn more about Applitools [Eyes](https://info.applitools.com/ucY77) and the [Ultrafast Test Cloud](https://info.applitools.com/ucY78) at [applitools.com](https://info.applitools.com/ucY76).
+
+More about the Eyes Images SDK:
+* https://www.npmjs.com/package/@applitools/eyes-selenium
+* https://applitools.com/docs/api/eyes-sdk/index-gen/classindex-selenium4-javascript.html

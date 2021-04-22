@@ -23,9 +23,6 @@ describe('DemoApp - Ultrafast Grid', function () {
     // Initialize the eyes configuration.
     let conf = new Configuration()
 
-    // You can get your api key from the Applitools dashboard
-    conf.setApiKey('APPLITOOLS_API_KEY');
-
     // create a new batch info instance and set it to the configuration
     conf.setBatch(new BatchInfo("Ultrafast Batch"));
 
