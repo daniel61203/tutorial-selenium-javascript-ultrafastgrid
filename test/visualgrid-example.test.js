@@ -2,6 +2,7 @@
 
 const { Builder, By } = require('selenium-webdriver');
 const { Eyes, VisualGridRunner, RunnerOptions, Target, RectangleSize, Configuration, BatchInfo, BrowserType, DeviceName, ScreenOrientation} = require('@applitools/eyes-selenium');
+const chrome = require('selenium-webdriver/chrome')
 
 describe('DemoApp - Ultrafast Grid', function () {
   let runner, eyes, driver;
@@ -9,12 +10,16 @@ describe('DemoApp - Ultrafast Grid', function () {
   before(async () => {
 
     // Create a new chrome web driver
+    const options = new chrome.Options();
+    if (process.env.CI === 'true') options.headless();
+
     driver = await new Builder()
         .forBrowser('chrome')
+        .setChromeOptions(options)
         .build();
 
     // Create a runner with concurrency of 1
-    const runnerOptions = new RunnerOptions().testConcurrency(1);
+    const runnerOptions = new RunnerOptions().testConcurrency(5);
     runner = new VisualGridRunner(runnerOptions);
 
     // Create Eyes object with the runner, meaning it'll be a Visual Grid eyes.
@@ -22,6 +27,9 @@ describe('DemoApp - Ultrafast Grid', function () {
 
     // Initialize the eyes configuration.
     let conf = new Configuration()
+
+    // You can get your api key from the Applitools dashboard
+    conf.setApiKey(process.env.APPLITOOLS_API_KEY)
 
     // create a new batch info instance and set it to the configuration
     conf.setBatch(new BatchInfo("Ultrafast Batch"));
@@ -45,7 +53,7 @@ describe('DemoApp - Ultrafast Grid', function () {
 
   it('ultraFastTest', async () => {
     // Call Open on eyes to initialize a test session
-    await eyes.open(driver, 'Demo App', 'Ultrafast grid demo', new RectangleSize(800, 600));
+    await eyes.open(driver, 'Demo App - JS Selenium 4', 'Ultrafast grid demo', new RectangleSize(800, 600));
 
     // Navigate the browser to the "ACME" demo app.
     // ⭐️ Note to see visual bugs, run the test using the above URL for the 1st run.
