@@ -59,7 +59,7 @@ describe('DemoApp - Ultrafast Grid', function () {
     // ⭐️ Note to see visual bugs, run the test using the above URL for the 1st run.
     // but then change the above URL to https://demo.applitools.com/index_v2.html
     // (for the 2nd run)
-    await driver.get("https://demo.applitools.com");
+    await driver.get("https://demo.applitools.com/index_v2.html");
 
     // check the login page with fluent api, see more info here
     // https://applitools.com/docs/topics/sdk/the-eyes-sdk-check-fluent-api.html
